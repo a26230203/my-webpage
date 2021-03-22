@@ -1,10 +1,15 @@
-const nvaBar = document.querySelector('.nvabar');
+const openMenu = document.querySelector('.navbar .openMenu');
+const closeMenu = document.querySelector('.navbar .closeMenu');
+const menu = document.querySelector('.navbar .menu');
 
-window.onscroll = function() {
-    const y = window.scrollY;
-    if(y > 20) {
-        nvaBar.classList.add("sticky");
-    }else {
-        nvaBar.classList.remove("sticky");
-    }
+openMenu.addEventListener('click', show);
+closeMenu.addEventListener('click', close);
+
+function show() {
+    menu.style.display = 'flex';
+    menu.style.top = '0';
+}
+
+function close() {
+    menu.style.top = '-100%';
 }
